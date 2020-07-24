@@ -28,6 +28,22 @@ cecho -c red 'Hello cecho.bash'
 ```
 
 ### docker/listenDog.sh
-> author: Jover Zhang
+> author: Jover Zhang  
+> url: https://github.com/JoverZhang/bash-toolkit/blob/master/docker/listenDog.sh
+```shell script
+Usage:
+  listenDog.sh [OPTIONS] <LISTENS_NAME> <CALLBACK_CMD>
 
-The script listens to update for a file. It can execute a callback command when the file updated.
+Listens file(or directory), execute callback command when the file(or directory) updated.
+
+LISTENS_NAME:          file(or directory) to be listens
+CALLBACK_CMD:          callback command. When NAME updated to be executed
+
+Options:
+  -i, --interval       Set interval of listening (default 0.1s)
+```
+
+E.g:
+```shell script
+./listenDog.sh ./target/$PACKAGE.jar java -jar ./target/$PACKAGE.jar
+```

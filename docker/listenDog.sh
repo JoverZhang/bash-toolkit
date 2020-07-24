@@ -27,7 +27,7 @@ function kill_process() {
 # $1: file name to be detected.
 # $2: check interval. default 0.1s
 process_pid='' # Need to be `Ctrl+C` capture.
-function watch_dog() {
+function listen_dog() {
   file_update_time=''
 
   while :; do
@@ -63,7 +63,7 @@ function onCtrlC() {
 function _main() {
   sleep_time=$(if [[ "$3" ]]; then echo "$3"; else echo 0.1s; fi)
 
-  watch_dog "$1" "$sleep_time"
+  listen_dog "$1" "$sleep_time"
 }
 
 _main "$@"
